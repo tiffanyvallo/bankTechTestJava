@@ -9,6 +9,9 @@ public class BankAccount {
         this.balance += amount;
     }
     public void withdraw(float amount) {
+        if (amount <=0) {
+            throw new ArithmeticException("Invalid Amount: Cannot withdraw amount less than £0");
+        }
         this.balance -= amount;
     }
 }

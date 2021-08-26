@@ -28,7 +28,7 @@ public class BankAccountTest {
     }
 
     @Test
-    @DisplayName("cannot deposit negative values of money into account")
+    @DisplayName("cannot deposit negative amount of money into account")
     void testCannotDepositNegativeMoney(){
         assertThrows(ArithmeticException.class, () -> bankAccount.deposit(-100));
     }
@@ -39,5 +39,12 @@ public class BankAccountTest {
         bankAccount.deposit(1000);
         bankAccount.withdraw(200);
         assertEquals(800, bankAccount.balance);
+    }
+
+    @Test
+    @DisplayName("cannot withdraw negative amount of money into account")
+    void testCannotWithdrawNegativeAmount(){
+        bankAccount.deposit(100);
+        assertThrows(ArithmeticException.class, () -> bankAccount.withdraw(-500));
     }
 }
