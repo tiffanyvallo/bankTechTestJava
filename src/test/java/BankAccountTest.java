@@ -16,6 +16,16 @@ public class BankAccountTest {
         assertEquals(0, bankAccount.balance);
     }
 
+    @Test
+    @DisplayName("can save transactions into the transaction history")
+    void testCanSaveTransactions(){
+        BankAccount bankAccount = new BankAccount();
+        assertEquals(0, bankAccount.getTransactions().size());
+        bankAccount.deposit(8000);
+        bankAccount.withdraw(1000);
+        assertEquals(2, bankAccount.getTransactions().size());
+    }
+
     @Nested
     @DisplayName("Deposits")
     class Deposits{
@@ -60,8 +70,13 @@ public class BankAccountTest {
         @Test
         @DisplayName("cannot withdraw negative amount of money into account")
         void testCannotWithdrawNegativeAmount(){
-            bankAccount.deposit(100);
-            assertThrows(ArithmeticException.class, () -> bankAccount.withdraw(-500));
+            assertThrows(ArithmeticException.class, () -> bankAccount.withdraw(-100));
+        }
+
+        @Test
+        @DisplayName("cannot withdraw more than balance")
+        void testCannotWithdrawMoreThanBalance(){
+            assertThrows(ArithmeticException.class, () -> bankAccount.withdraw(5000));
         }
     }
 }
