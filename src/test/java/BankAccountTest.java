@@ -8,19 +8,29 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Bank Account")
 public class BankAccountTest {
+    BankAccount bankAccount;
+
+    @BeforeEach
+    void setup(){
+        bankAccount = new BankAccount();
+    }
 
     @Test
     @DisplayName("can create an account with zero balance")
     void testCanCreateABlankAccount(){
-        BankAccount bankAccount = new BankAccount();
         assertEquals(0, bankAccount.balance);
+    }
+
+
+    @Test
+    @DisplayName("can start with a blank transaction history")
+    void testCanStartWithBlankTransactionHistory() {
+        assertEquals(0, bankAccount.getTransactions().size());
     }
 
     @Test
     @DisplayName("can save transactions into the transaction history")
     void testCanSaveTransactions(){
-        BankAccount bankAccount = new BankAccount();
-        assertEquals(0, bankAccount.getTransactions().size());
         bankAccount.deposit(8000);
         bankAccount.withdraw(1000);
         assertEquals(2, bankAccount.getTransactions().size());
