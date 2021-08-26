@@ -9,6 +9,6 @@ public class BankAccount {
         this.balance += amount;
     }
     public void withdraw(float amount) {
-
+        this.balance -= amount;
     }
 }
