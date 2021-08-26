@@ -33,5 +33,11 @@ public class BankAccountTest {
         assertThrows(ArithmeticException.class, () -> bankAccount.deposit(-100));
     }
 
-
+    @Test
+    @DisplayName("can withdraw money from account")
+    void testCanWithdrawMoney(){
+        bankAccount.deposit(1000);
+        bankAccount.withdraw(200);
+        assertEquals(800, bankAccount.balance);
+    }
 }
