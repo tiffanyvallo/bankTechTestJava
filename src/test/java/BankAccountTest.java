@@ -11,4 +11,12 @@ public class BankAccountTest {
         BankAccount bankAccount = new BankAccount();
         assertEquals(0, bankAccount.balance);
     }
+
+    @Test
+    @DisplayName("can deposit money into account")
+    void testCanDepositMoneyIntoAccount(){
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.deposit(1000);
+        assertEquals(1000, bankAccount.balance);
+    }
 }
