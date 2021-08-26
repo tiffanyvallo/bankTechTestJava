@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Bank Account" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-26T14:32:24" hostname="Tiffanys-MBP" time="0.039">
+  <properties/>
+  <testcase name="can create an account with zero balance" classname="BankAccountTest" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
