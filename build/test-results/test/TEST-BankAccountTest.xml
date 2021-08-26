@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Bank Account" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-26T15:04:12" hostname="Tiffanys-MBP" time="0.035">
+<testsuite name="Bank Account" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-26T15:07:14" hostname="Tiffanys-MBP" time="0.036">
   <properties/>
-  <testcase name="cannot deposit negative values of money into account" classname="BankAccountTest" time="0.025"/>
-  <testcase name="can create an account with zero balance" classname="BankAccountTest" time="0.003"/>
-  <testcase name="can deposit money into account" classname="BankAccountTest" time="0.001"/>
+  <testcase name="cannot deposit negative values of money into account" classname="BankAccountTest" time="0.026"/>
+  <testcase name="can create an account with zero balance" classname="BankAccountTest" time="0.002"/>
+  <testcase name="can deposit money into account" classname="BankAccountTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
