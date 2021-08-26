@@ -2,6 +2,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Bank Account")
 public class BankAccountTest {
@@ -18,5 +19,12 @@ public class BankAccountTest {
         BankAccount bankAccount = new BankAccount();
         bankAccount.deposit(1000);
         assertEquals(1000, bankAccount.balance);
+    }
+
+    @Test
+    @DisplayName("cannot deposit negative values of money into account")
+    void testCannotDepositNegativeMoney(){
+        BankAccount bankAccount = new BankAccount();
+        assertThrows(ArithmeticException.class, () -> bankAccount.deposit(-100));
     }
 }
